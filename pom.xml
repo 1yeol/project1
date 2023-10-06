@@ -5,9 +5,9 @@
 	<groupId>com.team3</groupId>
 	<artifactId>project1</artifactId>
 	<name>project1</name>
-	<packaging>war</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
-		<properties>
+		<packaging>war</packaging>
+		<version>1.0.0-BUILD-SNAPSHOT</version>
+	<properties>
 		<java-version>11</java-version>
 		<org.springframework-version>5.2.9.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.9.9.1</org.aspectj-version>
