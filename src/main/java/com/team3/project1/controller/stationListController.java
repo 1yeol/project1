@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.team3.project1.domain.stationListDTO;
@@ -35,8 +36,12 @@ public class stationListController {
 		return "list/stationlist";
 	}
 	
+	
+	
 	@GetMapping("/charge")
-	public String charge() {
+	public String charge(@RequestParam("id") String tnumber, Model model) {
+		stationListDTO tnumbernumber = stationlistService.getTnumber(tnumber);
+		model.addAttribute("charge", tnumbernumber);
 		return "list/charge";
 	}
 	
@@ -59,5 +64,6 @@ public class stationListController {
 		mav.setViewName("errorStationlist");
 		return mav;
 	}
+	
 
 }

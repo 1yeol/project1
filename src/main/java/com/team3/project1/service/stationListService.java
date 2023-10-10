@@ -6,4 +6,6 @@ import com.team3.project1.domain.stationListDTO;
 
 public interface stationListService {
 	List<stationListDTO> getAllStationList();
+	stationListDTO getTnumber(String tnumber);
+	
 }

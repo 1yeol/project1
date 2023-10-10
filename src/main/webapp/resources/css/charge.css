@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+caption {
+	caption-side: top;
+	padding:10px;
+}
+
+th, td {
+	border: 1px solid #aaa;
+	height: 30px;
+	text-align: center;
+}
+
+thead th, thead td {
+	background: lightgray;
+}
+
+#traininfo_td {
+	text-align: left;
+	border: none;
+}

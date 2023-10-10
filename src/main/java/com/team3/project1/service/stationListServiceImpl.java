@@ -14,10 +14,13 @@ public class stationListServiceImpl implements stationListService {
 	@Autowired
 	private stationListRepository stationlistRepository;
 	
-	@Override
 	public List<stationListDTO> getAllStationList() {
 		// TODO Auto-generated method stub
 		return stationlistRepository.getAllStationList();
 	}
 
+	public stationListDTO getTnumber(String tnumber) {
+		stationListDTO trainnumber = stationlistRepository.getTnumber(tnumber);
+		return trainnumber;
+	}
 }

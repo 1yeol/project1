@@ -11,13 +11,13 @@
 
 <!-- 부트스트랩 링크 -->
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
-<!-- 커스텀 css -->
-<link href="./resources/css/stationList.css" rel="stylesheet">
 
-<script>
-	function charge() {
-		window.open("/charge", "_blank", "width=600, height=400");
+<style>
+	th, td {
+		text-align: center;
 	}
+</style>
+<script>
 	function first() {
 		window.open("/first", "_self");
 	}
@@ -28,7 +28,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand  navbar-dark bg-dark">  
+    <nav class="navbar navbar-expand  navbar-dark bg-dark">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="./stationlist">Home</a>
@@ -54,29 +54,25 @@
 	    		<th scope="col"><spring:message code="stationlist.tnubmer" /></th>
 	    		<th scope="col"><spring:message code="stationlist.start" /></th>
 	    		<th scope="col"><spring:message code="stationlist.arrvie" /></th>
-	    		<th scope="col"><spring:message code="stationlist.first" /></th>
-	    		<th scope="col"><spring:message code="stationlist.standard" /></th>
 	    		<th scope="col"><spring:message code="stationlist.fare" /></th>
 	    		<th scope="col"><spring:message code="stationlist.time" /></th>
+	    		<th scope="col"><spring:message code="stationlist.reservation" /></th>
     		</tr>
     	</thead>
     	<c:forEach items="${stationList}" var="station">
 	    	<tobody>
 	    		<tr>
 	    			<th scope="row">${station.division}</th>
-	    			<td>${station.tnumber}</td>
-	    			<td>${station.start}</td>
-	    			<td>${station.arrive}</td>
+	    			<td >${station.tnumber}</td>
+	    			<td >${station.start}</td>
+	    			<td >${station.arrive}</td>
 	    			<td>
-	    				<input type="button" onclick="first()" value="<spring:message code="stationlist.first" />">
-	    			</td>
-	    			<td>
-	    				<input type="button" onclick="standard()" value="<spring:message code="stationlist.standard" />">
-	    			</td>
-	    			<td>
-	    				<input type="button" onclick="charge()" value="<spring:message code="stationlist.charge" />">
+	    				<p><a href="<c:url value="/charge?id=${station.tnumber}"/>" role="button" onclick="window.open(this.href, '/_blank', 'width=1200, height=200'); return false;">조회 &raquo;</a>
 	    			</td>
 	    			<td>${station.operatingtime}</td>
+	    			<td>
+	    				<p><a href="<c:url value="/reservation"/>" role="button" onclick="window.open(this.href); return false;">예약 &raquo;</a>
+	    			</td>
 	    		</tr>
 	    	</tobody>
 	    </c:forEach>
